@@ -35,5 +35,38 @@ body{
 }
 
 h1,h2,h3,h4,h5,h6{
-    font-family:'Playfair Display', sans-serif;
+    font-family:'Playfair Display', serif;
 }
+
+/* --- LAYOUT --- */
+.list-container{
+        max-width: 80%;
+        margin: 0 auto;
+        border: 2px solid blue;
+    }
+
+ li{
+        border: 2px solid red;
+    }
+
+@media screen and (min-width: 600px) {
+    .hero, .contact-area{
+        display: flex;
+    }
+
+    .project-list{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+}
+
+@media screen and (min-width: 901px) {
+    .project-list {
+            grid-template-columns: repeat(3, 1fr);
+        }
+}
+
+
+
