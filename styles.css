@@ -32,26 +32,76 @@ textarea {
 
 body{
     font-family: 'Roboto', sans-serif;
+    background-color: var(--background);
 }
 
 h1,h2,h3,h4,h5,h6{
     font-family:'Playfair Display', serif;
 }
+/* -------------- */
 
-/* --- LAYOUT --- */
+/* --- THEME --- */
+:root{
+    --accent: #1f1f1f;
+    --background: #f9f5eb;
+}
+/* -------------- */
+
+.hero{
+    background-color: var(--accent);
+    padding: 0 3.5rem;
+}
+
+.hero__photo > img,
+.project-card__thumb > img,
+.contact-area img {
+    max-width: 20rem;
+}
+
+.hero__content{
+    padding: 1.75rem 0;
+}
+
+.about-card{
+    background-color: var(--background);
+    padding: 1.5rem 1.5rem 1.25rem 1.5rem;
+}
+
+.about-card__title{
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.about-card__icons {
+    display: flex;
+    gap: .5rem;
+    justify-content: center;
+    margin-top: 1.75rem;
+}
+
 .list-container{
         max-width: 80%;
         margin: 0 auto;
-        border: 2px solid blue;
-    }
-
- li{
-        border: 2px solid red;
     }
 
 @media screen and (min-width: 600px) {
-    .hero, .contact-area{
-        display: flex;
+    
+    .hero__content{
+        display: flow-root;
+    }
+
+    .hero__photo{
+        float: left;
+        margin-right: 1rem;
+    }
+    
+    .about-card{
+        margin: auto;
+        width: min(100vw - 40px, 30rem);
+        margin-top: 9rem;
+    }
+
+    .about-card__icons{
+        justify-content: flex-end;
     }
 
     .project-list{
@@ -60,9 +110,32 @@ h1,h2,h3,h4,h5,h6{
         gap: 1rem;
     }
 
+    .contact-area{
+        display: flex;
+    }
+
 }
 
 @media screen and (min-width: 901px) {
+
+    .hero__content{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero__photo{
+        margin: 0;
+    }
+
+    .about-card{
+        margin: 0;
+    }
+
+    .about-card__title{
+        text-align: start;
+    }
+
     .project-list {
             grid-template-columns: repeat(3, 1fr);
         }
